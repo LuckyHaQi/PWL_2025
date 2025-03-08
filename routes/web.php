@@ -18,10 +18,6 @@ Route::get('/about', function () {
     return 'NIM: 2341720077';
 });
 
-Route::get('/user/{ananta}', function ($name) {
-    return 'Luqman '.$name;
-    });
-
 Route::get('/posts/{satu}/comments/{lima}',
 function ($postId, $commentId) {
 return 'Pos ke-'.$postId." Komentar ke-: ".$commentId;
@@ -30,6 +26,10 @@ return 'Pos ke-'.$postId." Komentar ke-: ".$commentId;
 Route::get('/articles/{Kerusuhan98}', function ($id) {
 return 'Halaman Artikel dengan ID: '.$id;
 });
+
+Route::get('/user/{name?}', function ($name='John') {
+    return 'Nama saya '.$name;
+    });
 
 /*
 |--------------------------------------------------------------------------
