@@ -17,6 +17,10 @@ Route::get('/welcome', function () {
 Route::get('/about', function () {
     return 'NIM: 2341720077';
 });
+
+Route::get('/user/{ananta}', function ($name) {
+    return 'Luqman '.$name;
+    });
 /*
 |--------------------------------------------------------------------------
 | Web Routes
