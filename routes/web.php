@@ -21,6 +21,12 @@ Route::get('/about', function () {
 Route::get('/user/{ananta}', function ($name) {
     return 'Luqman '.$name;
     });
+
+Route::get('/posts/{satu}/comments/{lima}',
+function ($postId, $commentId) {
+return 'Pos ke-'.$postId." Komentar ke-: ".$commentId;
+});
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
