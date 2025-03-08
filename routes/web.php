@@ -27,6 +27,10 @@ function ($postId, $commentId) {
 return 'Pos ke-'.$postId." Komentar ke-: ".$commentId;
 });
 
+Route::get('/articles/{Kerusuhan98}', function ($id) {
+return 'Halaman Artikel dengan ID: '.$id;
+});
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
