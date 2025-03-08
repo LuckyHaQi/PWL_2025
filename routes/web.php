@@ -4,7 +4,11 @@ use Illuminate\Support\Facades\Route;
 // Praktikum 2 Langkah 4
 use App\Http\Controllers\WelcomeController;
 // Praktikum 2 Langkah 6
-use App\Http\Controllers\PageController;
+// use App\Http\Controllers\PageController;
+// Praktikum 2 Langkah 7
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
 
 // Route::get('/hello', function () {
 //     return 'Hello World!';
@@ -41,11 +45,16 @@ Route::get('/user/{name?}', function ($name='John') {
 // Langkah 4
 Route::get('/hello', [WelcomeController::class,'hello']);
 
-//Langkah 6
-Route::get('/', [PageController::class, 'index']);
-Route::get('/about', [PageController::class, 'about']);
-Route::get('/articles/{id}', [PageController::class, 'articles']);
-    
+// Langkah 6
+// Route::get('/', [PageController::class, 'index']);
+// Route::get('/about', [PageController::class, 'about']);
+// Route::get('/articles/{id}', [PageController::class, 'articles']);
+
+//Langkah 7
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/articles/{id}', [ArticleController::class, 'articles']);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
