@@ -64,7 +64,7 @@ Route::resource('photos', PhotoController::class);
 
 // Langkah 2
 Route::get('/greeting', function () {
-    return view('hello', ['name' => 'Luqman']);
+    return view('blog.hello', ['name' => 'Luqman']);
 });
 /*
 |--------------------------------------------------------------------------
