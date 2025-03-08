@@ -52,13 +52,20 @@ Route::get('/hello', [WelcomeController::class,'hello']);
 // Route::get('/about', [PageController::class, 'about']);
 // Route::get('/articles/{id}', [PageController::class, 'articles']);
 
-//Langkah 7
+// Langkah 7
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/articles/{id}', [ArticleController::class, 'articles']);
 
-//Langkah 8
+// Langkah 8
 Route::resource('photos', PhotoController::class);
+
+// Praktikum 3
+
+// Langkah 2
+Route::get('/greeting', function () {
+    return view('hello', ['name' => 'Luqman']);
+});
 /*
 |--------------------------------------------------------------------------
 | Web Routes
