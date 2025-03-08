@@ -68,9 +68,15 @@ Route::resource('photos', PhotoController::class);
 // });
 
 // Langkah 6
-Route::get('/greeting', function () {
-    return view('blog.hello', ['name' => 'Luqman']);
-});
+// Route::get('/greeting', function () {
+//     return view('blog.hello', ['name' => 'Luqman']);
+// });
+
+// Langkah 9
+Route::get('/greeting', [WelcomeController::class,
+'greeting']);
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
