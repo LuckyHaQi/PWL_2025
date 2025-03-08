@@ -63,6 +63,11 @@ Route::resource('photos', PhotoController::class);
 // Praktikum 3
 
 // Langkah 2
+// Route::get('/greeting', function () {
+//     return view('hello', ['name' => 'Luqman']);
+// });
+
+// Langkah 6
 Route::get('/greeting', function () {
     return view('blog.hello', ['name' => 'Luqman']);
 });
