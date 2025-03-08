@@ -9,6 +9,8 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
+// Praktikum 2 Langkah 8
+use App\Http\Controllers\PhotoController;
 
 // Route::get('/hello', function () {
 //     return 'Hello World!';
@@ -55,6 +57,8 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/articles/{id}', [ArticleController::class, 'articles']);
 
+//Langkah 8
+Route::resource('photos', PhotoController::class);
 /*
 |--------------------------------------------------------------------------
 | Web Routes
