@@ -1,89 +1,17 @@
 <?php
-
-use Illuminate\Support\Facades\Route;
-// Praktikum 2 Langkah 4
-use App\Http\Controllers\WelcomeController;
-// Praktikum 2 Langkah 6
-// use App\Http\Controllers\PageController;
-// Praktikum 2 Langkah 7
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ArticleController;
-// Praktikum 2 Langkah 8
-use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\SalesController;
+use Illuminate\Support\Facades\Route;
 
-// Route::get('/hello', function () {
-//     return 'Hello World!';
-// });
-
-Route::get('/world', function () {
-    return 'World';
-});
-
-Route::get('/welcome', function () {
-    return 'Selamat Datang!';
-});
-
-// Route::get('/about', function () {
-//     return 'NIM: 2341720077';
-// });
-
-Route::get('/posts/{satu}/comments/{lima}',
-function ($postId, $commentId) {
-return 'Pos ke-'.$postId." Komentar ke-: ".$commentId;
-});
-
-// Route::get('/articles/{Kerusuhan98}', function ($id) {
-// return 'Halaman Artikel dengan ID: '.$id;
-// });
-
-Route::get('/user/{name?}', function ($name='John') {
-    return 'Nama saya '.$name;
-    });
-
-
-// PRAKTIKUM 2
-
-// Langkah 4
-Route::get('/hello', [WelcomeController::class,'hello']);
-
-// Langkah 6
-// Route::get('/', [PageController::class, 'index']);
-// Route::get('/about', [PageController::class, 'about']);
-// Route::get('/articles/{id}', [PageController::class, 'articles']);
-
-// Langkah 7
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/about', [AboutController::class, 'index']);
-Route::get('/articles/{id}', [ArticleController::class, 'articles']);
 
-// Langkah 8
-Route::resource('photos', PhotoController::class);
+Route::get('/category/foodbeverage', [ProductController::class, 'foodBeverage']);
+Route::get('/category/beautyhealth', [ProductController::class, 'beautyHealth']);
+Route::get('/category/homecare', [ProductController::class, 'homeCare']);
+Route::get('/category/babykid', [ProductController::class, 'babyKid']);
 
-// Praktikum 3
+Route::get('/user/{id}/name/{name}', [UserController::class, 'show']);
 
-// Langkah 2
-// Route::get('/greeting', function () {
-//     return view('hello', ['name' => 'Luqman']);
-// });
-
-// Langkah 6
-// Route::get('/greeting', function () {
-//     return view('blog.hello', ['name' => 'Luqman']);
-// });
-
-// Langkah 9
-Route::get('/greeting', [WelcomeController::class,
-'greeting']);
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+Route::get('/sales', [SalesController::class, 'index']);
